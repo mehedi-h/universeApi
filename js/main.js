@@ -33,8 +33,15 @@ const displayAiData = (aiDatas) => {
                         <li>${aiData.features[2]}</li>
                     </div>
                     <hr class="">
-                    <h2 class="card-title text-xl font-bold pt-3">${aiData.name}</h2>
-                    <p class="font-normal"><img class="inline" src="/images/calendar.png" alt="" srcset="">${aiData.published_in}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="md:space-y-2 lg:space-y-4">
+                            <h2 class="card-title text-xl font-bold pt-3">${aiData.name}</h2>
+                            <p class=" text-sm text-gray-500 font-semibold"><img class="inline pr-2" src="/images/calendar.png" alt="" srcset="">${aiData.published_in}</p>
+                        </div>
+                        <div>
+                            <button onClick="modalBtn('${aiData.name}')" class=" bg-red-100 text-white p-3 rounded-full"><img src="/images/next.png" alt="Next Page"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         `
@@ -43,5 +50,17 @@ const displayAiData = (aiDatas) => {
     });
 
 }
+const modalBtn = async (id) => {
+    // console.log('button clicked')
+    // https://openapi.programming-hero.com/api/ai/tool/${id}
 
+    const res = await fetch(`https://openapi.programming-hero.com/api/ai/tools/${id}`)
+    // console.log(res)
+    const data = await res.json()
+    // console.log(data)
+    const popUp = data.data
+
+    console.log(popUp)
+}
+modalBtn()
 loadAiNews()
