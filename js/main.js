@@ -34,7 +34,7 @@ const displayAiData = (aiDatas) => {
                     </div>
                     <hr class="">
                     <h2 class="card-title text-xl font-bold pt-3">${aiData.name}</h2>
-                    <p>${aiData.published_in}</p>
+                    <p class="font-normal"><img class="inline" src="/images/calendar.png" alt="" srcset="">${aiData.published_in}</p>
                 </div>
             </div>
         `
