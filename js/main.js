@@ -2,7 +2,7 @@
 const loadAiNews = async (modalBtn) => {
     const res = await fetch('https://openapi.programming-hero.com/api/ai/tools');
     const data = await res.json()
-    console.log(data)
+    // console.log(data)
     const aiDatas = data.data.tools
 
     // console.log(aiDatas)
@@ -10,7 +10,7 @@ const loadAiNews = async (modalBtn) => {
 }
 
 const displayAiData = (aiDatas) => {
-    console.log(aiDatas)
+    // console.log(aiDatas)
 
     const aiNewsContainer = document.getElementById('ai-news-container')
     aiNewsContainer.textContent = '';
@@ -40,7 +40,7 @@ const displayAiData = (aiDatas) => {
                             <p class=" text-sm text-gray-500 font-semibold"><img class="inline pr-2" src="/images/calendar.png" alt="" srcset="">${aiData.published_in}</p>
                         </div>
                         <div>
-                            <button onclick="modalBtn('${aiData.id}')" class=" bg-red-100 text-white p-3 rounded-full"><img src="/images/next.png" alt="Next Page"></button>
+                            <button onclick="modalBtnPopup('${aiData.id}')" class=" bg-red-100 text-white p-3 rounded-full"><img src="/images/next.png" alt="Next Page"></button>
                         </div>
                     </div>
                 </div>
@@ -51,13 +51,19 @@ const displayAiData = (aiDatas) => {
     });
 
 }
-const modalBtn = async (id) => {
+const modalBtnPopup = async (id) => {
 
     const res = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
-    const data = await res.json()
+    const data = await res.json();
     const popUp = data.data
 
-    console.log(popUp)
+    // console.log(data)
+    modalPopup(popUp)
+}
+
+const modalPopup = (modalData) => {
+    console.log(modalData)
+    modal_details.showModal();
 }
 
 loadAiNews()

@@ -19,8 +19,18 @@
         <section id="ai-container" class="lg:px-40">
             <div id="ai-news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             </div>
-            <div id="popup-container">
 
+            <!-- show modal popup --------------------->
+            <div id="popup-container">
+                <!-- You can open the modal using ID.showModal() method -->
+                <!-- <button class="btn" onclick="my_modal_3.modalBtn()">open modal</button> -->
+                <dialog id="modal_details" class="modal">
+                <form method="dialog" class="modal-box">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    <h3 class="font-bold text-lg">Hello!</h3>
+                    <p class="py-4">Press ESC key or click on ✕ button to close</p>
+                </form>
+                </dialog>
             </div>
         </section>
         <div id="see-more-btn" class="text-center lg:py-14">
