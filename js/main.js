@@ -64,6 +64,21 @@ const modalBtnPopup = async (id) => {
 const modalPopup = (modalData) => {
     console.log(modalData)
     modal_details.showModal();
+
+    const popupText = document.getElementById('popup-text')
+    popupText.innerHTML = `
+        <h4 class=" lg:text-lg lg:font-bold">${modalData.description}</h4>
+        <div class="grid lg:grid-cols-3">
+            <p>${modalData.pricing.plan}</p>
+            <p>${modalData.pricing.plan}</p>
+            <p>${modalData.pricing.plan}</p>
+        </div>
+    `
+    const popupImg = document.getElementById('popup-img')
+    popupImg.innerHTML = `
+        <h4 class=" lg:text-lg lg:font-bold">${modalData.input_output_examples}</h4>
+        <h4 class=" lg:text-sm lg:font-bold">${modalData.input_output_examples}</h4>
+    `
 }
 
 loadAiNews()

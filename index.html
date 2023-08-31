@@ -21,18 +21,27 @@
             </div>
 
             <!-- show modal popup --------------------->
-            <div id="popup-container">
+            <div id="main-popup-container">
                 <!-- You can open the modal using ID.showModal() method -->
                 <!-- <button class="btn" onclick="my_modal_3.modalBtn()">open modal</button> -->
                 <dialog id="modal_details" class="modal">
                 <form method="dialog" class="modal-box">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                    <h3 class="font-bold text-lg">Hello!</h3>
-                    <p class="py-4">Press ESC key or click on ✕ button to close</p>
+                    <button class="btn btn-sm btn-circle hover:bg-green-100 absolute right-2 top-2">✕</button>
+                    <div id="popup-container" class="flex flex-col md:flex-row lg:flex-row justify-evenly items-center lg:gap-x-5">
+                        <div id="popup-text">
+
+                        </div>
+
+                        <div id="popup-img">
+
+                        </div>
+                    </div>
                 </form>
                 </dialog>
             </div>
         </section>
+
+        <!--------------------- See More Button -------------------->
         <div id="see-more-btn" class="text-center lg:py-14">
             <button class="text-white font-medium bg-red-500 lg:py-3 lg:px-6 rounded-lg">See More</button>
         </div>
